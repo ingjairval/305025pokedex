@@ -3,15 +3,11 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start": "node server.js",
+    "build": "ng build --configuration production",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test --code-coverage --browsers=Chrome",
-    "test:cov": "ng test --code-coverage --no-watch --no-progress --browsers=ChromeHeadlessCI",
-    "lint": "ng lint",
-    "predeploy": "ng build --configuration production --base-href=/pokedex-angular/",
-    "deploy": "gh-pages -d dist/pokedex-angular",
-    "prepare": "husky install"
+    "test": "ng test",
+    "heroku-postbuild": "ng build --configuration production"
   },
   "private": true,
   "dependencies": {
@@ -30,7 +26,10 @@
     "@fortawesome/free-solid-svg-icons": "^6.1.2",
     "@graphql-tools/webpack-loader": "^6.7.1",
     "apollo-angular": "^3.0.1",
+    "compression": "^1.8.0",
+    "express": "^5.1.0",
     "graphql": "^16",
+    "helmet": "^8.1.0",
     "normalize.css": "^8.0.1",
     "pokedex-angular": "file:",
     "rxjs": "~7.5.0",
@@ -73,5 +72,15 @@
     "apollo-angular": {
       "@angular/core": "$@angular/core"
     }
+  },
+  "lint-staged": {
+    "*.ts": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.html": [
+      "prettier --write",
+      "git add"
+    ]
   }
 }
