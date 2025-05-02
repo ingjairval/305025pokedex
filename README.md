@@ -1,114 +1,80 @@
-# PokeDex - Despliegue en Railway
+#  PokeDex - Tutorial de Creación de Cuenta en Vercel
 
-Este repositorio contiene el código fuente y la documentación necesaria para el despliegue de la aplicación PokeDex en Railway, desarrollada por PumasLab para Pueblo Paleta Inc.
+Este documento explica cómo se creó una cuenta en la nube pública **Vercel** para desplegar la aplicación Angular llamada **PokeDex**.
 
-## Configuración inicial de la cuenta en Railway
+---
 
-En este documento, se explicará paso a paso cómo crear una cuenta en Railway y cómo configurarla para comenzar a desplegar aplicaciones.
+##  ¿Qué es Vercel?
 
-### 1. Creación de la cuenta en Railway
+[Vercel](https://vercel.com) es una plataforma de nube que permite desplegar aplicaciones web de manera rápida, segura y gratuita, con integración directa con GitHub, GitLab o Bitbucket.
 
-1. Visita el sitio web oficial de Railway: [https://railway.app/](https://railway.app/)
+---
 
-2. Haz clic en el botón "Start Building" o "Sign Up" para iniciar el proceso de registro.
+##  Requisitos Previos
 
-3. Railway ofrece varias opciones para registrarse:
-   - Con GitHub
-   - Con Google
-   - Con correo electrónico
+Antes de crear una cuenta en Vercel, debes tener lo siguiente:
 
-   Para este tutorial, utilizaremos la opción de GitHub por su integración directa con repositorios.
+- Una cuenta activa de **GitHub** (https://github.com).
+- Un navegador web moderno (Chrome, Firefox, Edge, etc.).
 
-4. Selecciona "Continue with GitHub".
+---
 
-5. Autoriza a Railway para acceder a tu cuenta de GitHub. Si es tu primera vez usando Railway, deberás permitir el acceso a tus repositorios.
+##  Pasos para Crear una Cuenta en Vercel
 
-6. Una vez autorizado, serás redirigido al dashboard de Railway.
+### 1. Ingresar a la Página de Vercel
 
-### 2. Configuración del plan gratuito
+Ve a [https://vercel.com](https://vercel.com) desde tu navegador.
 
-1. Railway ofrece un plan gratuito llamado "Developer" que permite:
-   - $5 de crédito por mes
-   - 512 MB de RAM
-   - Uso compartido de CPU
-   - 1 GB de almacenamiento
-   - 3 proyectos activos
+---
 
-2. Por defecto, tu cuenta estará en este plan al registrarte. No es necesario realizar ninguna acción adicional para activarlo.
+### 2. Iniciar el Registro
 
-3. Verifica tu plan actual haciendo clic en tu avatar (esquina superior derecha) y seleccionando "Billing".
+Haz clic en el botón **"Sign Up"** (Registrarse) ubicado en la esquina superior derecha.
 
-### 3. Configuración del método de pago (opcional)
+---
 
-1. Si planeas usar Railway más allá del plan gratuito, puedes configurar un método de pago.
+### 3. Seleccionar Método de Registro
 
-2. Ve a "Billing" desde tu avatar en la esquina superior derecha.
+Selecciona la opción **"Continue with GitHub"** para usar tu cuenta de GitHub y autoriza el acceso.
 
-3. Haz clic en "Add payment method" y sigue las instrucciones para agregar una tarjeta de crédito o débito.
+- Se abrirá una ventana de GitHub donde deberás iniciar sesión (si aún no lo estás).
+- Luego, deberás autorizar a Vercel a acceder a tu cuenta.
 
-4. Railway no cobrará automáticamente a menos que excedas los límites del plan gratuito.
+---
 
-### 4. Configuración de variables de entorno (para más adelante)
+### 4. Crear un Equipo (opcional)
 
-Railway permite configurar variables de entorno directamente desde su interfaz, lo cual es útil para almacenar información sensible como claves API, credenciales de base de datos, etc.
+- Puedes elegir crear un **equipo gratuito** o continuar con tu cuenta personal.
+- En este caso, seleccionamos el **plan gratuito (Hobby)** que incluye:
+  - Despliegue ilimitado.
+  - Certificados HTTPS automáticos.
+  - Dominio público con sufijo `vercel.app`.
 
-1. En el dashboard de Railway, selecciona tu proyecto.
+---
 
-2. Ve a la pestaña "Variables".
+### 5. Configurar Cuenta Inicial
 
-3. Aquí puedes agregar pares clave-valor para tus variables de entorno.
+- Ingresa tu nombre o el de tu organización.
+- Selecciona tus intereses (opcional).
+- Completa el registro.
 
-4. Para el despliegue de PokeDex, configuraremos estas variables más adelante en el proceso.
+---
 
-### 5. Configuración de notificaciones
+### 6. Acceder al Dashboard
 
-1. Es recomendable configurar notificaciones para estar al tanto del estado de tus despliegues y el uso de recursos.
+Una vez creada la cuenta, serás redirigido al **dashboard** donde podrás conectar repositorios de GitHub y desplegar tus proyectos.
 
-2. Ve a "Settings" desde tu avatar.
+---
 
-3. Selecciona "Notifications".
+##  Resultado
 
-4. Configura las notificaciones según tus preferencias:
-   - Email
-   - Discord
-   - Slack
+Ya tienes tu cuenta de Vercel creada y lista para desplegar la aplicación **PokeDex**.
 
-### 6. Instalación de la CLI de Railway (opcional pero recomendado)
+---
 
-La CLI (Command Line Interface) de Railway te permite interactuar con tus proyectos desde la terminal.
+##  Recursos Útiles
 
-1. Abre una terminal en tu sistema operativo.
+- Página principal de Vercel: https://vercel.com
+- Documentación oficial: https://vercel.com/docs
+- Repositorio del proyecto PokeDex: [https://github.com/rcuello/ac4dem1a](https://github.com/rcuello/ac4dem1a)
 
-2. Ejecuta el siguiente comando para instalar la CLI:
-
-   ```bash
-   npm i -g @railway/cli
-   ```
-
-3. Una vez instalada, inicia sesión ejecutando:
-
-   ```bash
-   railway login
-   ```
-
-4. Esto abrirá tu navegador para autenticarte. Una vez completado, estarás listo para usar la CLI.
-
-### 7. Verificación de la configuración
-
-Para asegurarte de que todo está correctamente configurado:
-
-1. Accede al dashboard de Railway.
-
-2. Verifica que puedas crear un nuevo proyecto haciendo clic en "New Project".
-
-3. Confirma que puedas ver las diferentes opciones de despliegue:
-   - Deploy from GitHub repo
-   - Start from template
-   - Empty project
-   - Import from Heroku
-
-Si puedes ver estas opciones, tu cuenta está correctamente configurada y lista para comenzar a desplegar aplicaciones.
-
-## Próximos pasos
-
-Una vez completada la configuración de tu cuenta en Railway, puedes proceder con el despliegue de la aplicación PokeDex siguiendo las instrucciones detalladas en el archivo [Despliegue.md](./Despliegue.md).
