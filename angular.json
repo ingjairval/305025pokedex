@@ -46,7 +46,7 @@
                 "externals": "replace"
               }
             },
-            "baseHref": "/pokedex-angular/"
+            "baseHref": "/"
           },
           "configurations": {
             "production": {
