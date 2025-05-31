@@ -1,6 +1,6 @@
 import { Configuration } from 'webpack';
 
-export default {
+const config: Configuration = {
   module: {
     rules: [
       {
@@ -10,4 +10,9 @@ export default {
       },
     ],
   },
-} as Configuration;
+  resolve: {
+    extensions: ['.ts', '.js', '.json', '.graphql', '.gql'],
+  },
+};
+
+export default config;
